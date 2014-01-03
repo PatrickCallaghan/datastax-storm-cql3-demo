@@ -35,7 +35,7 @@ The topology consists of
 
 ## Running the demo 
 
-You will need a java runtime (preferably 7) along with maven 3 to run this demo. You will need to be comfortable installing and starting Cassandra and DSE (hadoop and solr nodes included). Start DSE or a cassandra instance on your local machine.
+You will need a java runtime (preferably 7) along with maven 3 to run this demo. You will need to be comfortable installing and starting Cassandra and DSE (hadoop and solr nodes included). Start DSE 3.1.X or a cassandra 1.2.X instance on your local machine.
 
 This demo uses quite a lot of memory so it is worth setting the MAVEN_OPTS to run maven with more memory
 
