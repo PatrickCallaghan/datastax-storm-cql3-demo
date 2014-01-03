@@ -39,6 +39,6 @@ To create the a single node cluster with replication factor of 1 for standard lo
 
 To run the insert
 
-    mvn clean compile exec:java -Dexec.mainClass="com.heb.finance.analytics.Main" -DstopSize=1000000
+    mvn clean compile exec:java -Dexec.mainClass=com.heb.storm.risk.StormRiskAnalyticsCqlAggregator
 		
 The stopSize property allows us to specify the number of inserts we want to run. 
