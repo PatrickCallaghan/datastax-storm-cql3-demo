@@ -1,4 +1,4 @@
-# Realtime Risk Aggregator Demo
+# Realtime Risk Aggregator with Storm Demo
 
 This is a demo to show how Cassandra and Storm can be used to provide realtime aggregation of risk sensitivities. On a single machine it should process approx 5000 inserts per second while aggregating parts of the hierarchy. 
 
@@ -20,9 +20,21 @@ In this demo we also want to be able to aggregate all the sensitivities at a cer
     
     select * from storm_risk_sensitivities_aggregate  where hier_path = 'Paris/FX/desk1' and risk_sens_name = 'maturity';
 
+## Storm
+
+This demo uses storm to populate the 2 tables needed to fulfil our queries. One is the hierarchy table and one is the aggreate table. 
+
+The topology consists of 
+	RISK SPOUT - creates an endless stream of sensitivity values for a certain position. 
+	
+	HIERARCHY BOLT - inserts the sensitivity value for the position hierarhy. This also aggregates the values up to each parent hierarhcy for each sub hierarchy. e.g. London/FX for each desk
+	AGGREATE BOLT - aggregates the values up to each parent hierarhcy e.g. London/FX for irDelta 
+	
+	CASSANDRA BOLT - a writer for both the HIERARCHY and AGGREGATE BOLTS. Uses cql 3 to insert the values to cassandra.
+
 ## Running the demo 
 
-You will need a java runtime (preferably 7) along with maven 3 to run this demo. You will need to be comfortable installing and starting Cassandra and DSE (hadoop and solr nodes included).
+You will need a java runtime (preferably 7) along with maven 3 to run this demo. You will need to be comfortable installing and starting Cassandra and DSE (hadoop and solr nodes included). Start DSE or a cassandra instance on your local machine.
 
 This demo uses quite a lot of memory so it is worth setting the MAVEN_OPTS to run maven with more memory
 
