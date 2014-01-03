@@ -25,6 +25,7 @@ In this demo we also want to be able to aggregate all the sensitivities at a cer
 This demo uses storm to populate the 2 tables needed to fulfil our queries. One is the hierarchy table and one is the aggreate table. 
 
 The topology consists of 
+
 	RISK SPOUT - creates an endless stream of sensitivity values for a certain position. 
 	
 	HIERARCHY BOLT - inserts the sensitivity value for the position hierarhy. This also aggregates the values up to each parent hierarhcy for each sub hierarchy. e.g. London/FX for each desk
