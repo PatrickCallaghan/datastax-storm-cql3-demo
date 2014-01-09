@@ -38,7 +38,7 @@ public class RiskHierarchyAggregator implements IBasicBolt {
 		}
 		
 		String hier = riskSensitivity.getPath();
-		String subHier = riskSensitivity.getName();
+		String subHier = riskSensitivity.getPosition();
 		
 		//Populate the maps
 		addHierValue(riskSensitivity, hier, subHier);

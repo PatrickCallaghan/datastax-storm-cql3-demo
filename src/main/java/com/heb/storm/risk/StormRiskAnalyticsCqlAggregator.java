@@ -8,6 +8,7 @@ import backtype.storm.StormSubmitter;
 import backtype.storm.topology.TopologyBuilder;
 import backtype.storm.tuple.Fields;
 
+import com.datastax.demo.utils.PropertyHelper;
 import com.heb.storm.risk.cql.CassandraCqlBolt;
 
 public class StormRiskAnalyticsCqlAggregator {
@@ -20,8 +21,10 @@ public class StormRiskAnalyticsCqlAggregator {
     public static void main(String[] args) throws Exception {    	
         Config config = new Config();
         
-        HashMap<String, Object> clientConfig = new HashMap<String, Object>();        
-        clientConfig.put("cassandra.nodes", "localhost");
+        HashMap<String, Object> clientConfig = new HashMap<String, Object>();
+        
+        String nodes = PropertyHelper.getProperty("contactPoints", "localhost");
+        clientConfig.put("cassandra.nodes", nodes);
         clientConfig.put("cassandra.keyspace", "storm_demo_cql3");        
         
         RiskSpout riskSprout = new RiskSpout();
