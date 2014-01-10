@@ -9,7 +9,8 @@ public class SchemaSetupMulti extends SchemaSetup {
 		
 		String keyspace = PropertyHelper.getProperty("keyspace", "storm_demo_cql3");
 		
-		CREATE_KEYSPACE = "CREATE KEYSPACE if not exists " + keyspace + " WITH replication = "
+		DROP_KEYSPACE = "Drop keyspace " +keyspace;	
+		CREATE_KEYSPACE = "CREATE KEYSPACE " + keyspace + " WITH replication = "
 				+ "{'class' : 'NetworkTopologyStrategy', 'Cassandra' : 3, 'Analytics' : 1, 'Solr' : 1}";
 		
 		LOG.info ("Starting Multi Center DSE setup.");
