@@ -42,7 +42,7 @@ This demo uses quite a lot of memory so it is worth setting the MAVEN_OPTS to ru
     export MAVEN_OPTS=-Xmx512M
 
 ## Schema Setup
-Note : This will drop the keyspace and create a new one. All existing data will be lost. 
+Note : This will drop the keyspace "storm_demo_cql3" and create a new one. All existing data will be lost. 
 
 To specify contact points use the contactPoints command line parameter e.g. '-DcontactPoints=192.168.25.100,192.168.25.101'
 The contact points can take mulitple points in the IP,IP,IP (no spaces).
@@ -55,4 +55,4 @@ To run the insert
 
     mvn clean compile exec:java -Dexec.mainClass="com.heb.storm.risk.StormRiskAnalyticsCqlAggregator"
 		
-The stopSize property allows us to specify the number of inserts we want to run. 
+
