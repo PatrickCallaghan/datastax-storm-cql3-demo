@@ -35,7 +35,7 @@ The topology consists of
 
 ## Running the demo 
 
-You will need a java runtime (preferably 7) along with maven 3 to run this demo. Start DSE 3.1.X or a cassandra 1.2.X instance on your local machine. This demo just runs as a standalone process on the localhost.
+You will need a java runtime (preferably 7) along with maven 3 to run this demo. Start DSE 4.X or a cassandra 2.X instance on your local machine. This demo just runs as a standalone process on the localhost. This demo will run for 60 secs and then stop. You can change this in the code if you wish.
 
 This demo uses quite a lot of memory so it is worth setting the MAVEN_OPTS to run maven with more memory
 

@@ -63,7 +63,6 @@ public class RiskNameAggregator implements IBasicBolt {
 
 		Map<String, Map<String, Double>> subHierMap;
 		Map<String, Double> riskSensitivities;
-		;
 
 		// Check for the hierarchy path
 		if (this.aggregatesByRiskType.containsKey(hier)) {
