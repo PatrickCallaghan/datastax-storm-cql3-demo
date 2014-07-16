@@ -18,4 +18,4 @@ CREATE TABLE if not exists storm_risk_sensitivities_aggregate (
 ) WITH compaction={'class': 'LeveledCompactionStrategy'};
 
 truncate storm_risk_sensitivities_hierarchy;
-truncate storm_risk_sensitivities_hierarchy;
+truncate storm_risk_sensitivities_aggregate;
